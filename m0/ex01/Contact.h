@@ -19,7 +19,7 @@ public:
     Contact();
     void print() const;
 
-    friend std::ostream &operator<<(std::ostream &os, const Contact &contact);
+     std::ostream &operator<<(std::ostream &os, const Contact &contact);
 };
 
 #endif //CPP00_CONTACT_H
