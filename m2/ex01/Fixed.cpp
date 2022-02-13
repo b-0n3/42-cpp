@@ -19,42 +19,43 @@ Fixed::~Fixed() {
 
 Fixed &Fixed::operator=(Fixed const &copy) {
     PRINT("Copy assignment operator called")
-    this->rawBits = copy.getRawBits();
+    if (this != &copy)
+        this->rawBits = copy.getRawBits();
     return *this;
 }
 
 int Fixed::getRawBits(void) const {
     PRINT("getRawBits member function called")
-    return UNSCALE(this->rawBits);
+    return rawBits;
 }
 
 void Fixed::setRawBits(const int raw) {
     PRINT("setRawBits member function called")
-    this->rawBits = SCALE(raw);
+    this->rawBits =raw;
 }
 
 Fixed::Fixed(const int value) {
-    PRINT("Int constructor called");
-    this->rawBits = SCALE(value);
+    PRINT("Int constructor called")
+    this->rawBits = (value << Fixed::fractionalBits);
 }
 
 Fixed::Fixed(const float value) {
     PRINT("Float constructor called");
-    this->rawBits = std::roundf(value * (1<<Fixed::fractionalBits));
+    this->rawBits =((int) std::roundf(value * (1 << Fixed::fractionalBits)));
 }
 
 float Fixed::toFloat() const {
-    PRINT("toFloat member function called");
-    return roundf(UNSCALE(this->rawBits));
+    PRINT("toFloat member function called")
+    return ((float)this->rawBits / (1 << fractionalBits));
 }
 
  int Fixed::toInt() const {
-    PRINT("toInt member function called");
-    return UNSCALE(this->rawBits);
+    PRINT("toInt member function called")
+    return this->rawBits >> fractionalBits;
 }
 std::ostream &operator<<(std::ostream &os, Fixed const& f)
 {
 
-    os << std::roundf(f.getRawBits() / (1 <<8));
+    os << f.toFloat();
     return os;
 }

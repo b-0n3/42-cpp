@@ -1,4 +1,4 @@
-FILES=$(shell find . )
+FILES=$(shell find ./ )
 
 all:
 	clang++ $(FILES)

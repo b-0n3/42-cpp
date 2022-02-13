@@ -11,7 +11,7 @@ Fixed::Fixed() {
     this->rawBits = 0;
 }
 
-Fixed::Fixed(Fixed  &copy) {
+Fixed::Fixed(Fixed const  &copy) {
     PRINT("Copy constructor called")
     *this = copy;
 }
@@ -20,20 +20,21 @@ Fixed::~Fixed() {
     PRINT("Destructor called")
 }
 
-Fixed &Fixed::operator=(Fixed &copy) {
+Fixed &Fixed::operator=(Fixed const &copy) {
     PRINT("Copy assignment operator called")
-   this->rawBits = copy.getRawBits();
+    if (this != &copy)
+        this->rawBits = copy.getRawBits();
     return *this;
 }
 
-int Fixed::getRawBits(void) {
+int Fixed::getRawBits(void) const {
     PRINT("getRawBits member function called")
-    return UNSCALE(this->rawBits);
+    return this->rawBits;
 }
 
 void Fixed::setRawBits(const int raw) {
     PRINT("setRawBits member function called")
-    this->rawBits = SCALE(raw);
+    this->rawBits = raw;
 }
 
 

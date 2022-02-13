@@ -8,8 +8,6 @@
 #include <cmath>
 
 #define  PRINT(x)  std::cout << x<< std::endl;
-#define SCALE(x) (x<<Fixed::fractionalBits)
-#define UNSCALE(x) (x>>Fixed::fractionalBits)
 class Fixed {
 private:
     int rawBits;
@@ -19,7 +17,7 @@ public:
     Fixed(const Fixed  &copy);
     Fixed(const int value);
     Fixed(const float value);
-   float  toFloat() const;
+    float  toFloat() const;
     int toInt() const;
     ~Fixed();
     Fixed& operator=(Fixed const&f);
