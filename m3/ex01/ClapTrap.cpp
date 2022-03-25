@@ -8,16 +8,16 @@ ClapTrap::ClapTrap() {
     PRINT("ClapTrap ")
     PRINT(" default constructor called")
     PRINTLN()
-    this->_hitPoint = 10;
-    this->_energyPoint = 10;
-    this->_attackDamagePoint = 0;
+    this->_hitPoint = 100;
+    this->_energyPoint = 50;
+    this->_attackDamagePoint = 20;
 }
 
 ClapTrap::ClapTrap(std::string name) {
     this->_name = name;
-    this->_hitPoint = 10;
-    this->_energyPoint = 10;
-    this->_attackDamagePoint = 0;
+    this->_hitPoint = 100;
+    this->_energyPoint = 50;
+    this->_attackDamagePoint = 20;
     PRINT("ClapTrap ")
     PRINT(this->_name)
     PRINT(" custom  constructor called")
@@ -46,7 +46,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &a) {
     this->_attackDamagePoint = a._attackDamagePoint;
     PRINT("ClapTrap ")
     PRINT(this->_name)
-    PRINT(" = operator  called")
+    PRINT(" assignment operator  called")
     PRINTLN()
     return *this;
 }

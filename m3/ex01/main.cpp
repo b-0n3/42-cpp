@@ -2,25 +2,25 @@
 // Created by Abdelouahad Ait hamd on 3/24/22.
 //
 
-#include "ClapTrap.h"
+#include "ScavTrap.h"
 int main()
 {
-    ClapTrap a;
-     ClapTrap b("b_0n3");
-    ClapTrap c(b);
-    ClapTrap *n = new ClapTrap("b1");
+    ScavTrap a;
+    ScavTrap b("b_0n3");
+    ScavTrap c(b);
+    ScavTrap *n = new ScavTrap("b1");
     a = c;
     a.attack("1");
+    a.guardGate();
+
     b.attack("2");
+    b.guardGate();
     c.attack("3");
-    a.takeDamage(1);
-    b.takeDamage(10);
-    c.takeDamage(3);
-    a.beRepaired(20);
+    c.guardGate();
     b.attack("B_0n3");
     n->attack("hell");
-    n->beRepaired(1);
-    n->takeDamage(24);
+    n->guardGate();
+
     delete n;
 
 
