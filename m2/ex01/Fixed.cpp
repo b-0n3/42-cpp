@@ -31,7 +31,7 @@ int Fixed::getRawBits(void) const {
 
 void Fixed::setRawBits(const int raw) {
     PRINT("setRawBits member function called")
-    this->rawBits =raw;
+    this->rawBits = raw;
 }
 
 Fixed::Fixed(const int value) {

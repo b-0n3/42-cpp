@@ -25,7 +25,6 @@ void PhoneBook::search() {
         i++;
     }
 
-
     this->lookForContact();
 }
 

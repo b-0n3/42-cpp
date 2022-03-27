@@ -8,7 +8,6 @@ $(NAME):
 
 clean:
 	@rm -rf *.o
-	@rm -rf *.h.gch
 fclean: clean
 	@rm -rf $(NAME)
 

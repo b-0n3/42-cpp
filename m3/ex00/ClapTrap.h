@@ -23,6 +23,14 @@ public:
     void attack(const std::string &target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned  int  amount);
+    const std::string &getName() const;
+    void setName(const std::string &name);
+    unsigned int getHitPoint() const;
+    void setHitPoint(unsigned int hitPoint);
+    unsigned int getEnergyPoint() const;
+    void setEnergyPoint(unsigned int energyPoint);
+    unsigned int getAttackDamagePoint() const;
+    void setAttackDamagePoint(unsigned int attackDamagePoint);
 };
 
 

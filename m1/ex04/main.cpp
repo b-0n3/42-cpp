@@ -7,23 +7,23 @@
 #define GET_OUTPUT_NAME(original)	std::string(original) + ".replace"
 
 std::string replaceLine(std::string &line ,
-                        std::string needle ,
-                        std::string replacePrase,
+                        std::string &needle ,
+                        std::string &replacePhrase,
                         std::string result,
                         std::size_t start) {
     std::size_t pos;
     pos = line.find(needle , start);
     if (pos == (std::size_t )-1)
         return result + line.substr(start);
-    result += line.substr(start , pos - start) + replacePrase;
+    result += line.substr(start , pos - start) + replacePhrase;
     start = pos   + needle.length();
-    return replaceLine(line , needle, replacePrase, result, start);
+    return replaceLine(line , needle, replacePhrase, result, start);
 }
 
 int readAndReplace(std::fstream &input,
                    std::fstream &output,
-                   std::string needle,
-                   std::string replacePhrase)
+                   std::string &needle,
+                   std::string &replacePhrase)
 {
     std::string buffer;
     std::string result;
@@ -58,7 +58,11 @@ int main(int argc, char **argv)
 
             return 1;
         }
-        return readAndReplace(input , output , std::string(argv[2]) , std::string(argv[3]));
+        std::string needle = std::string(argv[2]);
+        std::string replacePhrase = std::string (argv[3]);
+        return readAndReplace(input , output ,
+                              needle,
+                              replacePhrase);
     }
     std::cerr << "error : arguments" << std::endl;
     return 1;

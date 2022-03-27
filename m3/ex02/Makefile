@@ -1,5 +1,5 @@
 NAME = fragTrap
-SRC  = ClapTrap.cpp FragTrap.cpp ScavTrap.cpp main.cpp
+SRC  = ClapTrap.cpp FragTrap.cpp main.cpp
 
 all: $(NAME)
 
@@ -8,7 +8,6 @@ $(NAME):
 
 clean:
 	@rm -rf *.o
-	@rm -rf *.h.gch
 fclean: clean
 	@rm -rf $(NAME)
 

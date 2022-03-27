@@ -11,16 +11,15 @@ int main()
     ScavTrap *n = new ScavTrap("b1");
     a = c;
     a.attack("1");
-    a.guardGate();
-
     b.attack("2");
-    b.guardGate();
     c.attack("3");
-    c.guardGate();
+
     b.attack("B_0n3");
     n->attack("hell");
+    a.guardGate();
+    b.guardGate();
+    c.guardGate();
     n->guardGate();
-
     delete n;
 
 

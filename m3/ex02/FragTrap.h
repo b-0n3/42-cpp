@@ -1,5 +1,5 @@
 //
-// Created by Abdelouahad Ait hamd on 3/25/22.
+// Created by Abdelouahad Ait hamd on 3/26/22.
 //
 
 #ifndef CPP_FRAGTRAP_H
@@ -9,12 +9,12 @@
 class FragTrap : ClapTrap{
 public:
     FragTrap();
-    ~FragTrap();
+    FragTrap(std::string name);
     FragTrap(const FragTrap &a);
-    FragTrap(const std::string &name);
-    void highFivesGuys(void);
-    FragTrap& operator=(const FragTrap &a);
-    void attack(const std::string & target);
+    ~FragTrap();
+    FragTrap &operator=(const FragTrap &a);
+    void attack(const std::string &target);
+    void highFivesGuys();
 };
 
 

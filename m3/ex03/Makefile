@@ -1,14 +1,13 @@
-NAME = fragTrap
-SRC  = ClapTrap.cpp FragTrap.cpp ScavTrap.cpp main.cpp
+NAME = diamondTrap
+SRC  = ClapTrap.cpp DiamondTrap.cpp FragTrap.cpp ScavTrap.cpp main.cpp
 
 all: $(NAME)
 
 $(NAME):
-	@clang++ -Wall -Wextra -Werror $(SRC)  -o $(NAME)
+	@clang++  --std=c++98 -Wall -Wextra -Werror $(SRC)  -o $(NAME)
 
 clean:
 	@rm -rf *.o
-	@rm -rf *.h.gch
 fclean: clean
 	@rm -rf $(NAME)
 

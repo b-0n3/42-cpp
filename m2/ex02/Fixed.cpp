@@ -89,8 +89,9 @@ Fixed Fixed::operator--() {
 
 Fixed Fixed::operator++() {
     Fixed f(*this);
+    ++this->rawBits;
     ++f.rawBits;
-    return f;
+    return *this;
 }
 Fixed &Fixed::operator++(int)
 {
@@ -148,8 +149,6 @@ Fixed& Fixed::max(Fixed &a, Fixed &b)
         return  a;
     return b;
 }
-
-
 
 std::ostream &operator<<(std::ostream &os, Fixed const& f)
 {
