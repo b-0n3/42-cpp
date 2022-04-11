@@ -1,6 +1,15 @@
-//
-// Created by Abdelouahad Ait hamd on 2/10/22.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aait-ham <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/03 16:40:53 by aait-ham          #+#    #+#             */
+/*   Updated: 2022/04/03 16:40:58 by aait-ham         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #ifndef CPP_FIXED_H
 #define CPP_FIXED_H
@@ -23,9 +32,9 @@ public:
     Fixed &operator=(Fixed const &f);
     int getRawBits(void) const;
     void setRawBits(int const raw);
-    Fixed &operator++(int);
+    Fixed operator++(int);
     Fixed operator++();
-    Fixed &operator--(int);
+    Fixed operator--(int);
     Fixed operator--();
     bool operator<(Fixed const &a)const;
     bool operator<=(Fixed const &a)const;

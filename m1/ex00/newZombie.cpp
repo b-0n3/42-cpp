@@ -1,10 +1,19 @@
-//
-// Created by Abdelouahad Ait hamd on 1/5/22.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aait-ham <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/01 14:31:06 by aait-ham          #+#    #+#             */
+/*   Updated: 2022/04/01 14:31:07 by aait-ham         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include "zombie.hpp"
 
-Zombie* newZombie( std::string name )
+#include "Zombie.h"
+
+Zombie* newZombie(std::string name)
 {
     Zombie *zombie = new Zombie(name);
     return zombie;

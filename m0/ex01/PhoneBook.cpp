@@ -1,9 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aait-ham <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/29 18:47:08 by aait-ham          #+#    #+#             */
+/*   Updated: 2022/03/29 18:47:10 by aait-ham         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 
 #include "PhoneBook.h"
 
 
-PhoneBook::~PhoneBook() {}
+PhoneBook::~PhoneBook() {
+}
 
 PhoneBook::PhoneBook() {
     _index = 0;
@@ -11,7 +24,6 @@ PhoneBook::PhoneBook() {
 
 void PhoneBook::search() {
     int i;
-
 
     i = 0;
     std::cout <<  std::left << std::setw(10) << "index"
@@ -68,7 +80,6 @@ void PhoneBook::lookForContact() {
     if (id < 0 ||  id >= 8)
     {
         std::cout << "invalid id" << std::endl;
-        this->lookForContact();
     }else{
         std::cout<< this->_contacts[id];
     }

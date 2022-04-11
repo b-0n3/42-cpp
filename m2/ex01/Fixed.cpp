@@ -1,6 +1,15 @@
-//
-// Created by Abdelouahad Ait hamd on 2/10/22.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aait-ham <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/03 16:37:51 by aait-ham          #+#    #+#             */
+/*   Updated: 2022/04/03 16:37:53 by aait-ham         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "Fixed.h"
 Fixed::Fixed() {
@@ -36,23 +45,24 @@ void Fixed::setRawBits(const int raw) {
 
 Fixed::Fixed(const int value) {
     PRINT("Int constructor called")
-    this->rawBits = (value << Fixed::fractionalBits);
+    this->rawBits =     value << Fixed::fractionalBits;
 }
 
 Fixed::Fixed(const float value) {
     PRINT("Float constructor called");
-    this->rawBits =((int) std::roundf(value * (1 << Fixed::fractionalBits)));
+    this->rawBits = (int) (value * (1 << Fixed::fractionalBits));
 }
 
 float Fixed::toFloat() const {
-    PRINT("toFloat member function called")
-    return ((float)this->rawBits / (1 << fractionalBits));
+
+    return (float) this->rawBits / (1 << Fixed::fractionalBits);
 }
 
  int Fixed::toInt() const {
-    PRINT("toInt member function called")
+
     return this->rawBits >> fractionalBits;
 }
+
 std::ostream &operator<<(std::ostream &os, Fixed const& f)
 {
 

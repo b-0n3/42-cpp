@@ -2,7 +2,7 @@
 // Created by Abdelouahad Ait hamd on 1/5/22.
 //
 
-#include "Zombie.hpp"
+#include "Zombie.h"
 
 int main()
 {

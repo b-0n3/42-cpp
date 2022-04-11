@@ -1,6 +1,15 @@
-//
-// Created by Abdelouahad Ait hamd on 2/10/22.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aait-ham <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/03 16:40:32 by aait-ham          #+#    #+#             */
+/*   Updated: 2022/04/03 16:40:34 by aait-ham         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "Fixed.h"
 Fixed::Fixed() {
@@ -45,8 +54,8 @@ Fixed::Fixed(const float value) {
 }
 
 float Fixed::toFloat() const {
-    PRINT("toFloat member function called")
-    return ((float)this->rawBits / (1 << fractionalBits));
+
+    return (float) this->rawBits / (float)(1 << Fixed::fractionalBits);
 }
 
  int Fixed::toInt() const {
@@ -82,27 +91,27 @@ bool  Fixed::operator!=(Fixed const &a) const
     return this->getRawBits() != a.getRawBits();
 }
 Fixed Fixed::operator--() {
-    Fixed f(*this);
-    --f.rawBits;
-    return f;
+    this->rawBits--;
+    return *this;
 }
 
 Fixed Fixed::operator++() {
-    Fixed f(*this);
-    ++this->rawBits;
-    ++f.rawBits;
-    return *this;
-}
-Fixed &Fixed::operator++(int)
-{
+
     this->rawBits++;
     return *this;
 }
-
-Fixed &Fixed::operator--(int)
+Fixed Fixed::operator++(int)
 {
+    Fixed tmp(*this);
+    this->rawBits++;
+    return tmp;
+}
+
+Fixed Fixed::operator--(int)
+{
+  Fixed tmp(*this);
     this->rawBits--;
-    return *this;
+    return tmp;
 }
 
 Fixed Fixed::operator+(Fixed const &a) const

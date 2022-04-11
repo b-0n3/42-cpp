@@ -1,6 +1,16 @@
-//
-// Created by Abdelouahad Ait hamd on 1/6/22.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aait-ham <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/01 14:51:52 by aait-ham          #+#    #+#             */
+/*   Updated: 2022/04/01 14:51:53 by aait-ham         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 
 #ifndef CPP_HUMANB_HPP
 #define CPP_HUMANB_HPP
@@ -8,13 +18,13 @@
 
 class HumanB {
 private:
-    Weapon *weapon;
+    Weapon weapon;
     std::string name;
 public:
     HumanB(std::string name);
     ~HumanB();
     void attack();
-    void setWeapon(Weapon &weapon);
+    void setWeapon(Weapon &w);
 };
 
 

@@ -1,6 +1,15 @@
-    //
-// Created by Abdelouahad Ait hamd on 1/6/22.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aait-ham <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/01 14:53:02 by aait-ham          #+#    #+#             */
+/*   Updated: 2022/04/01 14:53:03 by aait-ham         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include <iostream>
 #include <fstream>
@@ -9,10 +18,11 @@
 std::string replaceLine(std::string &line ,
                         std::string &needle ,
                         std::string &replacePhrase,
-                        std::string result,
+                        std::string &result,
                         std::size_t start) {
     std::size_t pos;
     pos = line.find(needle , start);
+
     if (pos == (std::size_t )-1)
         return result + line.substr(start);
     result += line.substr(start , pos - start) + replacePhrase;
@@ -29,7 +39,6 @@ int readAndReplace(std::fstream &input,
     std::string result;
     if (!std::getline(input,buffer , input.widen(std::ifstream::traits_type::eof())))
         return 0;
-
     output << replaceLine(buffer, needle, replacePhrase, result,  0);
     return readAndReplace(input , output , needle ,replacePhrase);
 }
@@ -60,6 +69,11 @@ int main(int argc, char **argv)
         }
         std::string needle = std::string(argv[2]);
         std::string replacePhrase = std::string (argv[3]);
+        if(needle.empty())
+        {
+            std::cerr << "needle is empty" << std::endl;
+            return 1;
+        }
         return readAndReplace(input , output ,
                               needle,
                               replacePhrase);

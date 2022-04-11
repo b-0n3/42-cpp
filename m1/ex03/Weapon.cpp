@@ -1,10 +1,19 @@
-//
-// Created by Abdelouahad Ait hamd on 1/6/22.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aait-ham <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/01 14:52:04 by aait-ham          #+#    #+#             */
+/*   Updated: 2022/04/01 14:52:05 by aait-ham         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "Weapon.hpp"
 
-Weapon::Weapon(std::string type) {
+Weapon::Weapon(std::string const &type) {
     this->setType(type);
 }
 
@@ -22,5 +31,5 @@ void Weapon::setType(std::string type) {
 }
 
 Weapon::Weapon() {
-
+    std::cout<<"weapon constructor called"<< std::endl;
 }

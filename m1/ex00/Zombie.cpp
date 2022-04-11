@@ -1,17 +1,26 @@
-//
-// Created by Abdelouahad Ait hamd on 1/5/22.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aait-ham <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/01 14:30:42 by aait-ham          #+#    #+#             */
+/*   Updated: 2022/04/01 14:30:44 by aait-ham         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include "zombie.hpp"
+
+#include "Zombie.h"
 
 Zombie::~Zombie() {
     std::cout << this->name << " is dead , destructor has been called " << std::endl;
 }
 
-void Zombie::announce(void) {
-    std::cout << this->name << " BraiiiiiiinnnzzzZ..." << std::endl;
+void Zombie::announce() {
+    std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
-Zombie::Zombie(std::string name) {
+Zombie::Zombie(std::string const &name) {
     this->name = name;
 }

@@ -1,5 +1,15 @@
-// Created by Abdelouahad Ait hamd on 12/8/21.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aait-ham <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/29 18:46:19 by aait-ham          #+#    #+#             */
+/*   Updated: 2022/03/29 18:46:21 by aait-ham         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #ifndef CPP00_CONTACT_H
 #define CPP00_CONTACT_H
@@ -19,7 +29,7 @@ public:
     Contact();
     void print() const;
 
-     std::ostream &operator<<(std::ostream &os, const Contact &contact);
-};
 
+};
+std::ostream &operator<<(std::ostream &os, const Contact &contact);
 #endif //CPP00_CONTACT_H

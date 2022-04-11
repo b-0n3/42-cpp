@@ -1,6 +1,15 @@
-//
-// Created by Abdelouahad Ait hamd on 2/10/22.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aait-ham <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/03 16:36:08 by aait-ham          #+#    #+#             */
+/*   Updated: 2022/04/03 16:36:10 by aait-ham         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "Fixed.h"
 int main(  ) {
@@ -8,7 +17,7 @@ int main(  ) {
     Fixed b( a );
     Fixed c;
     c = b;
-    c.setRawBits(10);
+
     std::cout << a.getRawBits() << std::endl;
     std::cout << b.getRawBits() << std::endl;
     std::cout << c.getRawBits() << std::endl;
